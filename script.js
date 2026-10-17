@@ -30,7 +30,7 @@ record.addEventListener('click', () => {
   const active = record.getAttribute('aria-pressed') !== 'true';
   record.setAttribute('aria-pressed', String(active));
   record.setAttribute('aria-label', active ? 'Stop the illustrated record' : 'Animate the illustrated record');
-  document.querySelector('.record-caption').textContent = active ? 'A little joy in motion. Tap to pause.' : 'Tap the record. Add a little spin.';
+  document.querySelector('.record-caption').textContent = active ? 'IN MOTION · TAP TO PAUSE' : 'TAP TO SPIN · VISUAL PLAYGROUND';
 });
 reducedMotion.addEventListener('change', () => {
   if (reducedMotion.matches && record.getAttribute('aria-pressed') === 'true') record.click();
