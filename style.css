@@ -10,3 +10,4 @@
 
 /* Typography follows the rounded serif lettering in the supplied channel banner. */
 body{font-family:"Nunito Sans",Arial,sans-serif}.wordmark,h1,h2{font-family:"Fraunces",Georgia,serif}.wordmark{font-weight:700;letter-spacing:-1.8px;line-height:.84}h1{font-weight:700;letter-spacing:-7px;line-height:.87}h2{font-weight:400;letter-spacing:-2px}h2 em{font-style:normal}.arabic,[lang="ar"],.cover-title{font-family:"Noto Sans Arabic",sans-serif}.arabic{font-weight:700}.cover-title{font-size:52px;line-height:1.25}.light .cover-title{font-size:76px}@media(max-width:760px){h1{font-size:78px;letter-spacing:-4px}.cover-title{font-size:58px}}
+@media(max-width:760px){h1{font-size:clamp(60px,19.5vw,78px)}}
