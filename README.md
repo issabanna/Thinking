@@ -1,26 +1,13 @@
 # Thamar Zananiri
 
-A dependency-free static artist site with a personalized encouragement-card maker. Published from the repository root through GitHub Pages; no build step, accounts, or secrets required.
+Minimal blue artist landing page and a separate contact form. Static site published from the repository root through GitHub Pages.
 
-## Run locally
+Run locally: `python3 -m http.server 8000 --directory /workspace/Thinking`.
 
-```sh
-python3 -m http.server 8000 --directory /workspace/Thinking
-node --check script.js
-```
+The home page contains only the blue hero, the artist's official YouTube links, and a visual record-spin toggle. The contact page uses FormSubmit to route messages to the configured recipient. The recipient email is not rendered visibly, but the FormSubmit URL is readable in the HTML source. An opaque service endpoint or backend is required to hide the address from source. FormSubmit requires recipient confirmation before mail delivery works. CAPTCHA remains enabled, with a honeypot and native field validation. The confirmation page indicates submission, not verified email delivery. Actual email delivery has not been verified.
 
-## Send a little light
+The custom domain ThamarZananiri.com has been requested. Domain ownership and DNS-provider details are pending. No CNAME has been published yet, preserving the existing GitHub Pages URL until DNS is ready.
 
-The hero record opens a form for a recipient, feeling, optional note, and sender. Five feelings each have two curated King James Version verses with references and editorial encouragement. Repeated spins avoid selecting the current verse. The recommended song is a curated pairing rather than an artist endorsement.
+Typography uses self-hosted Space Grotesk, Manrope, and Noto Sans Arabic. Licenses are in assets/fonts. Channel-inspired artwork is original SVG artwork, not an extracted official logo. The record animation respects reduced-motion preferences.
 
-WhatsApp sharing includes the verse, note, song-search URL, and a dedication link. Dedications use a versioned, UTF-8/base64url JSON payload in the URL fragment, preserving the exact card. Names and notes are not stored in a database or local storage. Anyone with the link can read its contents; the form explains this before sharing. Incoming links are length-limited, validated against known verse IDs, and rendered with textContent. Personal notes are kept separate from scripture.
-
-Download Story card renders a 1080 × 1920 PNG locally with Canvas and the self-hosted fonts. It contains the dedication, scripture reference, song title, and channel handle. Add the copied dedication link separately in a social Story; PNG images do not contain clickable links or audio. Clipboard-denied browsers receive a selectable link.
-
-Browser checks covered all five feelings, nonrepeating verses, Unicode/Arabic input, live note edits, WhatsApp text encoding, shared-link round trips, clipboard success/fallback, long-text PNG export, invalid links, HTML injection as plain text, and six viewport widths from 320 to 1440 pixels. Other site checks cover reduced motion, title search, random song selection, and alignment through 1920 pixels.
-
-## Design and sources
-
-The blue, orange, teal, and botanical motifs follow artist-channel screenshots supplied by the user. The wordmark and SVG/card illustrations are original interpretations rather than extracted official logo or release-art files. Song titles and durations come from the screenshot. The official channel was supplied by the user. Individual video IDs are not available, so song links open searches within that channel. Unverified Instagram/CD Baby links are omitted.
-
-Current typography uses self-hosted variable Space Grotesk and Manrope with Noto Sans Arabic. Fontsource SIL Open Font License texts are included in assets/fonts. Earlier font files remain available but are not loaded by the current stylesheet. All motion respects reduced-motion preferences; core music links remain usable without JavaScript. The dedication maker requires JavaScript.
+Validation: home/contact/thanks pages, 320–1440px responsive widths, hero-only content, recipient absent from visible text, record toggle, required/email field validation, and a mocked FormSubmit POST. No test email was sent.
